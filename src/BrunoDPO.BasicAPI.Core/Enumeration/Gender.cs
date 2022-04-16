@@ -1,4 +1,4 @@
-﻿namespace BrunoDPO.BasicAPI.Core.Domain.Enumeration
+﻿namespace BrunoDPO.BasicAPI.Core.Enumeration
 {
     public enum Gender
     {

@@ -1,7 +1,7 @@
-﻿using BrunoDPO.BasicAPI.Core.Domain.Enumeration;
+﻿using BrunoDPO.BasicAPI.Core.Enumeration;
 using System;
 
-namespace BrunoDPO.BasicAPI.Core.Domain
+namespace BrunoDPO.BasicAPI.Core.Model
 {
     public class Person
     {

@@ -1,6 +1,5 @@
 ﻿using BrunoDPO.BasicAPI.Core.Domain;
 using FluentValidation;
-using FluentValidation.Results;
 using System.Data.SqlTypes;
 
 namespace BrunoDPO.BasicAPI.Core.Validators

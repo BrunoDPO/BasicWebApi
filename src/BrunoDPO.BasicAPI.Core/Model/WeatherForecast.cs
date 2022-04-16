@@ -1,6 +1,6 @@
 using System;
 
-namespace BrunoDPO.BasicAPI.Core.Domain
+namespace BrunoDPO.BasicAPI.Core.Model
 {
     public class WeatherForecast
     {
@@ -10,6 +10,6 @@ namespace BrunoDPO.BasicAPI.Core.Domain
 
         public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
 
-        public string? Summary { get; set; }
+        public string Summary { get; set; }
     }
 }

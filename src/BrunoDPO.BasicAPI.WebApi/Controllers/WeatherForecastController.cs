@@ -1,4 +1,4 @@
-using BrunoDPO.BasicAPI.Core.Domain;
+using BrunoDPO.BasicAPI.Core.Model;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -35,6 +35,7 @@ namespace BrunoDPO.BasicAPI.WebApi.Controllers
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public IEnumerable<WeatherForecast> Get()
         {
+            _logger.LogInformation("Retrieving the forecast information");
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
                 Date = DateTime.Now.AddDays(index),

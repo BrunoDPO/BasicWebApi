@@ -11,6 +11,7 @@ This WebApi project uses the following (**Star** those on GitHub if you haven't 
 - API Versioning with [ASP.NET MVC API Versioning](https://github.com/dotnet/aspnet-api-versioning)
 - [Newtonsoft.Json](https://github.com/JamesNK/Newtonsoft.Json) for dealing with JSON in the API Documentation (it works very well with Swashbuckle)
 - Model validation using [FluentValidation](https://github.com/FluentValidation/FluentValidation)
+- [SonarAnalizer](https://github.com/SonarSource/sonar-dotnet) to help me write better and safer code
 
 As I evolve this to a more robust nano or microservice, I will put some more layers and features...
 
