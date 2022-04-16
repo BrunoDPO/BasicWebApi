@@ -1,4 +1,4 @@
-﻿using BrunoDPO.BasicAPI.Core.Domain;
+﻿using BrunoDPO.BasicAPI.Core.Model;
 using FluentValidation;
 using System.Data.SqlTypes;
 
@@ -14,12 +14,12 @@ namespace BrunoDPO.BasicAPI.Core.Validators
 
             RuleFor(p => p.BirthDate)
                 .InclusiveBetween(SqlDateTime.MinValue.Value, SqlDateTime.MaxValue.Value)
-                .WithMessage("Invalid birth date");
+                .WithMessage((p, v) => $"Birth date {v.ToShortDateString()} is invalid");
 
             RuleFor(p => p.Gender)
                 .IsInEnum()
                 .NotEmpty()
-                .WithMessage("Invalid gender");
+                .WithMessage((p, v) => $"Gender {v} is invalid");
         }
     }
 }

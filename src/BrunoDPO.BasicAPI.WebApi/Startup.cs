@@ -42,6 +42,7 @@ namespace BrunoDPO.BasicAPI.WebApi
             {
                 config.DisableDataAnnotationsValidation = true;
                 config.ImplicitlyValidateRootCollectionElements = true;
+                config.LocalizationEnabled = false;
                 config.RegisterValidatorsFromAssemblyContaining<PersonValidator>();
             });
 
