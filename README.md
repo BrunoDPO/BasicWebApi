@@ -10,12 +10,12 @@ This WebApi project uses the following (**Star** those on GitHub if you haven't 
 - API Documentation with [Swashbuckle](https://github.com/domaindrivendev/Swashbuckle.WebApi)
 - API Versioning with [ASP.NET MVC API Versioning](https://github.com/dotnet/aspnet-api-versioning)
 - [Newtonsoft.Json](https://github.com/JamesNK/Newtonsoft.Json) for dealing with JSON in the API Documentation (it works very well with Swashbuckle)
+- Model validation using [FluentValidation](https://github.com/FluentValidation/FluentValidation)
 
 As I evolve this to a more robust nano or microservice, I will put some more layers and features...
 
 More libs planned such as:
 - [AutoMapper](https://github.com/AutoMapper/AutoMapper) for mapping internal objects into Value Objects / responses
-- [FluentValidation](https://github.com/FluentValidation/FluentValidation) to write better validators to check API inputs
 - [Flurl](https://github.com/tmenier/Flurl) or [Refit](https://github.com/reactiveui/refit) to make calls to external APIs
 - [Jwt.Net](https://github.com/jwt-dotnet/jwt) for implementing Json Web Tokens OR [Auth0](https://github.com/auth0/auth0-aspnetcore-authentication) for better authentication management
 - [Entity Framework Core](https://github.com/dotnet/efcore) to ease my database access

@@ -1,6 +1,6 @@
 using System;
 
-namespace BrunoDPO.BasicAPI.WebApi
+namespace BrunoDPO.BasicAPI.Core.Domain
 {
     public class WeatherForecast
     {
