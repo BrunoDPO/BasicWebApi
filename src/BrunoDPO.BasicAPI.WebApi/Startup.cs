@@ -44,6 +44,9 @@ namespace BrunoDPO.BasicAPI.WebApi
                 config.ImplicitlyValidateRootCollectionElements = true;
                 config.LocalizationEnabled = false;
                 config.RegisterValidatorsFromAssemblyContaining<PersonValidator>();
+            }).AddNewtonsoftJson(options =>
+            {
+                options.UseCamelCasing(true);
             });
 
             services.AddHealthChecks()
@@ -94,7 +97,6 @@ namespace BrunoDPO.BasicAPI.WebApi
             app.UseSwagger();
             app.UseSwaggerUI(options =>
             {
-                options.RoutePrefix = "";
                 var apiTitle = string.Join('.', typeof(Program).Namespace.Split('.')[..^1]);
                 foreach (var description in provider.ApiVersionDescriptions)
                 {
