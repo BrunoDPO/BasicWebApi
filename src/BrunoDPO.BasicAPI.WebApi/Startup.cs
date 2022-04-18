@@ -35,18 +35,14 @@ namespace BrunoDPO.BasicAPI.WebApi
                 options.Conventions.Add(new RouteTokenTransformerConvention(new SlugifyParameterTransformer()));
             }).AddNewtonsoftJson(options =>
             {
+                options.UseCamelCasing(true);
                 options.SerializerSettings.Converters.Add(new StringEnumConverter(new KebabCaseNamingStrategy(), allowIntegerValues: true));
-            });
-
-            services.AddMvc().AddFluentValidation(config =>
+            }).AddFluentValidation(config =>
             {
                 config.DisableDataAnnotationsValidation = true;
                 config.ImplicitlyValidateRootCollectionElements = true;
                 config.LocalizationEnabled = false;
                 config.RegisterValidatorsFromAssemblyContaining<PersonValidator>();
-            }).AddNewtonsoftJson(options =>
-            {
-                options.UseCamelCasing(true);
             });
 
             services.AddHealthChecks()
