@@ -1,4 +1,4 @@
-using BrunoDPO.BasicAPI.Core.Model;
+using BrunoDPO.BasicAPI.Domain.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;

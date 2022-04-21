@@ -1,4 +1,4 @@
-﻿using BrunoDPO.BasicAPI.Core.Validators;
+﻿using BrunoDPO.BasicAPI.Application.Validators;
 using BrunoDPO.BasicAPI.WebApi.Filter;
 using BrunoDPO.BasicAPI.WebApi.Options;
 using FluentValidation.AspNetCore;

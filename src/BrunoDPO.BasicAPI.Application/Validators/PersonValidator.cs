@@ -1,8 +1,8 @@
-﻿using BrunoDPO.BasicAPI.Core.Model;
+﻿using BrunoDPO.BasicAPI.Domain.Models;
 using FluentValidation;
 using System.Data.SqlTypes;
 
-namespace BrunoDPO.BasicAPI.Core.Validators
+namespace BrunoDPO.BasicAPI.Application.Validators
 {
     public class PersonValidator : AbstractValidator<Person>
     {
