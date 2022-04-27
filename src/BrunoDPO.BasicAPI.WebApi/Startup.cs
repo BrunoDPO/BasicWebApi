@@ -21,6 +21,8 @@ namespace BrunoDPO.BasicAPI.WebApi
 {
     public class Startup
     {
+        private static readonly string apiTitle = string.Join('.', typeof(Program).Namespace.Split('.')[..^1]);
+
         public IConfiguration Configuration { get; }
         
         public Startup(IConfiguration configuration)
@@ -30,6 +32,8 @@ namespace BrunoDPO.BasicAPI.WebApi
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddTransient<IConfigureOptions<SwaggerGenOptions>, SwaggerOptions>();
+
             services.AddControllers(options =>
             {
                 options.Conventions.Add(new RouteTokenTransformerConvention(new SlugifyParameterTransformer()));
@@ -61,7 +65,6 @@ namespace BrunoDPO.BasicAPI.WebApi
                 options.SubstituteApiVersionInUrl = true;
             });
 
-            services.AddTransient<IConfigureOptions<SwaggerGenOptions>, SwaggerOptions>();
             services.AddSwaggerGen(config =>
             {
                 config.EnableAnnotations();
@@ -93,12 +96,11 @@ namespace BrunoDPO.BasicAPI.WebApi
             app.UseSwagger();
             app.UseSwaggerUI(options =>
             {
-                var apiTitle = string.Join('.', typeof(Program).Namespace.Split('.')[..^1]);
                 foreach (var description in provider.ApiVersionDescriptions)
                 {
                     var notice = description.IsDeprecated ? " (deprecated)" : string.Empty;
                     options.SwaggerEndpoint(
-                        $"/swagger/{description.GroupName}/swagger.json",
+                        $"../swagger/{description.GroupName}/swagger.json",
                         $"{apiTitle} {description.GroupName}{notice}");
                 }
                 options.DocExpansion(DocExpansion.List);

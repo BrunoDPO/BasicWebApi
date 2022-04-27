@@ -8,6 +8,8 @@ namespace BrunoDPO.BasicAPI.WebApi.Options
 {
     public class SwaggerOptions : IConfigureOptions<SwaggerGenOptions>
     {
+        private static readonly string apiTitle = string.Join('.', typeof(Program).Namespace.Split('.')[..^1]);
+
         private readonly IApiVersionDescriptionProvider _provider;
 
         public SwaggerOptions(IApiVersionDescriptionProvider provider) =>
@@ -23,7 +25,6 @@ namespace BrunoDPO.BasicAPI.WebApi.Options
 
         private static OpenApiInfo CreateInfoForApiVersion(ApiVersionDescription description)
         {
-            var apiTitle = string.Join('.', typeof(Program).Namespace.Split('.')[..^1]);
             var deprecated = description.IsDeprecated ? " This API version has been deprecated." : string.Empty;
             return new OpenApiInfo
             {

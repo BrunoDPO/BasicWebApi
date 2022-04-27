@@ -9,7 +9,7 @@ WORKDIR /src/BrunoDPO.BasicAPI.WebApi
 RUN dotnet build -c Release -o /app --no-restore
 
 FROM base AS final
-ENV ASPNETCORE_ENVIRONMENT="Development"
+ENV ASPNETCORE_ENVIRONMENT="Production"
 WORKDIR /app
 COPY --from=publish /app .
 ENTRYPOINT ["dotnet", "BrunoDPO.BasicAPI.WebApi.dll"]
