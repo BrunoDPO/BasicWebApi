@@ -1,6 +1,7 @@
 ﻿using BrunoDPO.BasicAPI.Application.Validators;
 using BrunoDPO.BasicAPI.WebApi.Filter;
 using BrunoDPO.BasicAPI.WebApi.Options;
+using FluentValidation;
 using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
@@ -41,13 +42,13 @@ namespace BrunoDPO.BasicAPI.WebApi
             {
                 options.UseCamelCasing(true);
                 options.SerializerSettings.Converters.Add(new StringEnumConverter(new KebabCaseNamingStrategy(), allowIntegerValues: true));
-            }).AddFluentValidation(config =>
+            });
+
+            services.AddFluentValidationAutoValidation(config =>
             {
                 config.DisableDataAnnotationsValidation = true;
-                config.ImplicitlyValidateRootCollectionElements = true;
-                config.LocalizationEnabled = false;
-                config.RegisterValidatorsFromAssemblyContaining<PersonValidator>();
-            });
+            }).AddValidatorsFromAssemblyContaining<PersonValidator>();
+            ValidatorOptions.Global.LanguageManager.Enabled = true;
 
             services.AddHealthChecks()
                 .AddCheck("self", () => HealthCheckResult.Healthy())

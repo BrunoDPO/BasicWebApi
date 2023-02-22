@@ -23,7 +23,7 @@ namespace BrunoDPO.BasicAPI.WebApi.Controllers
         }
 
         [HttpPost(Name = "PostPerson")]
-        [SwaggerOperation(Summary = "Includes a new Person", Description = "Persists a new Person on the database")]
+        [SwaggerOperation(Summary = "Includes a new Person", Description = "Persists a new Person in the database")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
