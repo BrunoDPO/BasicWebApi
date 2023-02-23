@@ -13,6 +13,7 @@ namespace BrunoDPO.BasicAPI.WebApi.Controllers
     [ApiController]
     [ApiVersion("1")]
     [Route("api/v{version:apiVersion}/[controller]")]
+    [Consumes(MediaTypeNames.Application.Json)]
     [Produces(MediaTypeNames.Application.Json)]
     public class PersonController : ControllerBase
     {
@@ -25,7 +26,7 @@ namespace BrunoDPO.BasicAPI.WebApi.Controllers
 
         [HttpPost(Name = "PostPerson")]
         [SwaggerOperation(Summary = "Includes a new Person", Description = "Persists a new Person in the database")]
-        [Consumes(MediaTypeNames.Application.Json)]
+        
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
