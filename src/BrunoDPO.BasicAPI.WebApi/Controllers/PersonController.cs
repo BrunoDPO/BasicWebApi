@@ -1,6 +1,7 @@
 ﻿using BrunoDPO.BasicAPI.Domain.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.Extensions.Logging;
 using Swashbuckle.AspNetCore.Annotations;
 using System.Net.Mime;
@@ -24,6 +25,7 @@ namespace BrunoDPO.BasicAPI.WebApi.Controllers
 
         [HttpPost(Name = "PostPerson")]
         [SwaggerOperation(Summary = "Includes a new Person", Description = "Persists a new Person in the database")]
+        [Consumes(MediaTypeNames.Application.Json)]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
