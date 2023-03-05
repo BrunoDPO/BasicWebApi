@@ -9,12 +9,10 @@ using System.Threading.Tasks;
 
 namespace BrunoDPO.BasicAPI.WebApi.Controllers
 {
-    [ApiController]
     [ApiVersion("1")]
-    [Route("api/v{version:apiVersion}/[controller]")]
     [Consumes(MediaTypeNames.Application.Json)]
     [Produces(MediaTypeNames.Application.Json)]
-    public class PersonController : ControllerBase
+    public class PersonController : ApiControllerBase
     {
         private readonly ILogger<PersonController> _logger;
 

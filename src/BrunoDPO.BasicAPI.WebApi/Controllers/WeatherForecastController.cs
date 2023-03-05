@@ -10,11 +10,9 @@ using System.Net.Mime;
 
 namespace BrunoDPO.BasicAPI.WebApi.Controllers
 {
-    [ApiController]
     [ApiVersion("1")]
-    [Route("api/v{version:apiVersion}/[controller]")]
     [Produces(MediaTypeNames.Application.Json)]
-    public class WeatherForecastController : ControllerBase
+    public class WeatherForecastController : ApiControllerBase
     {
         private static readonly string[] Summaries = new[]
         {
