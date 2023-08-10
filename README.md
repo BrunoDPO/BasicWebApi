@@ -30,5 +30,5 @@ More libs planned such as:
 To aid my testing I plan on using:
 - [xUnit](https://github.com/xunit/xunit) for flexible test writing
 - [Bogus](https://github.com/bchavez/Bogus) for fixtures and simulated data
-- [NSubstitutr](https://github.com/nsubstitute/NSubstitute) for the unit testing in general (f.e. mocking)
+- [NSubstitute](https://github.com/nsubstitute/NSubstitute) for the unit testing in general (f.e. mocking)
 - [FluentAssertions](https://github.com/fluentassertions/fluentassertions) for writing better assertions on my tests
