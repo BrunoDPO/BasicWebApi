@@ -9,7 +9,8 @@ I chose to use Clean Architecture as it keeps the things simple so the projects 
 - **Infrastructure** which is responsible for managing conections to databases and external (like other HTTP APIs)
 - **WebApi** which is the main entry point and holds all controllers and configuration
 
-This WebApi project uses the following libraries: (:star: those on GitHub if you haven't already and consider paying the authors :dollar:)
+This WebApi project uses the following libraries:
+(:star: those on GitHub if you haven't already and consider paying the authors :dollar:)
 
 - Basic health checks using ASP.NET Core Diagnostics (part of [AspNetCore](https://github.com/dotnet/aspnetcore))
 - Logging as standard [Microsoft Logging](https://github.com/aspnet/Logging/tree/master/src/Microsoft.Extensions.Logging) format with [Serilog](https://github.com/serilog/serilog)
@@ -17,7 +18,7 @@ This WebApi project uses the following libraries: (:star: those on GitHub if you
 - API Versioning with [ASP.NET MVC API Versioning](https://github.com/dotnet/aspnet-api-versioning)
 - [Newtonsoft.Json](https://github.com/JamesNK/Newtonsoft.Json) for dealing with JSON in the API Documentation (it works very well with Swashbuckle)
 - Model validation using [FluentValidation](https://github.com/FluentValidation/FluentValidation)
-- [SonarAnalyzer](https://github.com/SonarSource/sonar-dotnet) for offline basic good practices checking without the need to have the extension installed
+- [SonarAnalyzer](https://github.com/SonarSource/sonar-dotnet) for offline basic "good practices" checking without needing to install extensions in the IDE
 
 As I evolve this into a more robust base microservice, I will put some more layers and features...
 
