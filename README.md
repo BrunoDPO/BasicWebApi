@@ -1,7 +1,7 @@
 # BasicWebApi
 Basic ASP.NET Core WebApi skeleton with the libs I use the most
 
-**Target C#:** 6.0 with latest features (but I'm not using minimal APIs for the sake of maintenability)
+**Target C#:** 6.0 with latest features (but I'm not using minimal APIs as I prefer the pedantic way)
 
 I chose to use Clean Architecture as it keeps the things simple so the projects are divided into:
 - **Domain** which holds all the models and enumerations
@@ -9,7 +9,7 @@ I chose to use Clean Architecture as it keeps the things simple so the projects 
 - **Infrastructure** which is responsible for managing conections to databases and external (like other HTTP APIs)
 - **WebApi** which is the main entry point and holds all controllers and configuration
 
-This WebApi project uses the following libraries: (:star: those on GitHub if you haven't already)
+This WebApi project uses the following libraries: (:star: those on GitHub if you haven't already and consider paying the authors :dollar:)
 
 - Basic health checks using ASP.NET Core Diagnostics (part of [AspNetCore](https://github.com/dotnet/aspnetcore))
 - Logging as standard [Microsoft Logging](https://github.com/aspnet/Logging/tree/master/src/Microsoft.Extensions.Logging) format with [Serilog](https://github.com/serilog/serilog)
@@ -24,11 +24,11 @@ As I evolve this into a more robust base microservice, I will put some more laye
 More libs planned such as:
 - [Flurl](https://github.com/tmenier/Flurl) or [Refit](https://github.com/reactiveui/refit) for making calls to external APIs
 - [Jwt.Net](https://github.com/jwt-dotnet/jwt) for implementing Json Web Tokens OR [Auth0](https://github.com/auth0/auth0-aspnetcore-authentication) for better authentication management
-- [Entity Framework Core](https://github.com/dotnet/efcore) to ease my database access
+- [Entity Framework Core](https://github.com/dotnet/efcore) to ease my database access and free me from writing the queries directly
 - [MassTransit](https://github.com/MassTransit) for making my API more event-driven (in my opinion it's simpler to use than [MediatR](https://github.com/jbogard/MediatR))
 
 To aid my testing I plan on using:
 - [xUnit](https://github.com/xunit/xunit) for flexible test writing
 - [Bogus](https://github.com/bchavez/Bogus) for fixtures and simulated data
-- [Moq](https://github.com/moq/moq) to create and manipulate Mocking
+- [NSubstitutr](https://github.com/nsubstitute/NSubstitute) for the unit testing in general (f.e. mocking)
 - [FluentAssertions](https://github.com/fluentassertions/fluentassertions) for writing better assertions on my tests
