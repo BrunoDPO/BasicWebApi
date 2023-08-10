@@ -22,7 +22,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BrunoDPO.BasicAPI.WebApi", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{C58DDFDE-A5EE-4C21-9598-9E479AEE2678}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrunoDPO.BasicAPI.Application.UnitTest", "tests\BrunoDPO.BasicAPI.Application.UnitTest\BrunoDPO.BasicAPI.Application.UnitTest.csproj", "{039D25B4-3924-4BA0-9DFF-30583A3FEFCE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BrunoDPO.BasicAPI.Application.UnitTest", "tests\BrunoDPO.BasicAPI.Application.UnitTest\BrunoDPO.BasicAPI.Application.UnitTest.csproj", "{039D25B4-3924-4BA0-9DFF-30583A3FEFCE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
