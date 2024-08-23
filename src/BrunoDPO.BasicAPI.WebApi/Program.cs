@@ -1,5 +1,4 @@
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Hosting;
+using Microsoft.AspNetCore.Builder;
 using Serilog;
 
 namespace BrunoDPO.BasicAPI.WebApi
@@ -8,18 +7,16 @@ namespace BrunoDPO.BasicAPI.WebApi
     {
         public static void Main(string[] args)
         {
-            CreateHostBuilder(args).Build().Run();
+            WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
+            builder.Host.UseSerilog((hostContext, services, configuration) =>
+            {
+                configuration.ReadFrom.Configuration(hostContext.Configuration);
+            });
+            Startup startup = new(builder.Configuration);
+            startup.ConfigureServices(builder.Services);
+            WebApplication app = builder.Build();
+            startup.Configure(app, app.Environment);
+            app.Run();
         }
-
-        public static IHostBuilder CreateHostBuilder(string[] args) =>
-            Host.CreateDefaultBuilder(args)
-                .UseSerilog((hostingContext, loggerConfiguration) =>
-                {
-                    loggerConfiguration.ReadFrom.Configuration(hostingContext.Configuration);
-                })
-                .ConfigureWebHostDefaults(webBuilder =>
-                {
-                    webBuilder.UseStartup<Startup>();
-                });
     }
 }
