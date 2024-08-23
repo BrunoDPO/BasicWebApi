@@ -1,3 +1,4 @@
+using Asp.Versioning;
 using BrunoDPO.BasicAPI.Domain.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;

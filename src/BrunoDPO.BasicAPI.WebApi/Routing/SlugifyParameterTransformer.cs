@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Routing;
 using System.Text.RegularExpressions;
 
-namespace BrunoDPO.BasicAPI.WebApi.Filter
+namespace BrunoDPO.BasicAPI.WebApi.Routing
 {
     public class SlugifyParameterTransformer : IOutboundParameterTransformer
     {
