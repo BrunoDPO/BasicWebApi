@@ -13,7 +13,7 @@ namespace BrunoDPO.BasicAPI.WebApi.Controllers
 {
     [ApiVersion("1")]
     [Produces(MediaTypeNames.Application.Json)]
-    public class WeatherForecastController : ApiControllerBase
+    public class WeatherForecastController : VersionedApiController
     {
         private static readonly string[] Summaries = new[]
         {

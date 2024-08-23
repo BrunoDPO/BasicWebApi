@@ -1,5 +1,4 @@
 ﻿using Asp.Versioning;
-using Asp.Versioning.ApiExplorer;
 using BrunoDPO.BasicAPI.Application.Validators;
 using BrunoDPO.BasicAPI.WebApi.Options;
 using BrunoDPO.BasicAPI.WebApi.Routing;
@@ -21,11 +20,11 @@ namespace BrunoDPO.BasicAPI.WebApi
 {
     public class Startup
     {
-        public IConfiguration Configuration { get; }
+        private readonly IConfiguration _configuration;
         
         public Startup(IConfiguration configuration)
         {
-            Configuration = configuration;
+            _configuration = configuration;
         }
 
         public void ConfigureServices(IServiceCollection services)

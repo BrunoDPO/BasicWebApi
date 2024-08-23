@@ -13,7 +13,7 @@ namespace BrunoDPO.BasicAPI.WebApi.Controllers
     [ApiVersion("1")]
     [Consumes(MediaTypeNames.Application.Json)]
     [Produces(MediaTypeNames.Application.Json)]
-    public class PersonController : ApiControllerBase
+    public class PersonController : VersionedApiController
     {
         private readonly ILogger<PersonController> _logger;
 
